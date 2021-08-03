@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -31,28 +32,28 @@ export default function Home() {
         <link rel="icon" href="/icon.png" />
       </Head>
       <header className={styles.header}>
-        <nav class={navBarStyle} id="navbar">
-          <div class="container">
-            <a class="navbar-brand" href="#home">Team Baitmain</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+        <nav className={navBarStyle} id="navbar">
+          <div className="container">
+            <a className="navbar-brand" href="#home">Team Baitmain</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto" id="ul">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#staff" style={staffInView ? {'color':'black'} : {}}>Staff</a>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto" id="ul">
+                <li className="nav-item">
+                  <a className="nav-link" aria-current="page" href="#staff" style={staffInView ? {'color':'black'} : {}}>Staff</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#discord" style={discordInView ? {'color':'black'} : {}}>Discord</a>
+                <li className="nav-item">
+                  <a className="nav-link" href="#discord" style={discordInView ? {'color':'black'} : {}}>Discord</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#league" style={leagueInView ? {'color':'black'} : {}}>League of Legends</a>
+                <li className="nav-item">
+                  <a className="nav-link" href="#league" style={leagueInView ? {'color':'black'} : {}}>League of Legends</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#faq" style={faqInView ? {'color':'black'} : {}}>FAQ</a>
+                <li className="nav-item">
+                  <a className="nav-link" href="#faq" style={faqInView ? {'color':'black'} : {}}>FAQ</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/legal-notice">Legal Notice</a>
+                <li className="nav-item">
+                  <Link href="/legal-notice"><a className="nav-link">Legal Notice</a></Link>
                 </li>
               </ul>
             </div>
@@ -63,41 +64,41 @@ export default function Home() {
       <main className={styles.main}>
 
         <section id="home" ref={home} className={styles.pagetitle}>
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             <h1>
-              <div class={styles.upper}>BAIT/</div>
+              <div className={styles.upper}>BAIT/</div>
               <br></br>
-              <div class={styles.lower}>/MAIN</div>
+              <div className={styles.lower}>/MAIN</div>
             </h1>
           </div>
         </div>   
         </section>
 
-        <section id="staff" ref={staff} className={styles.section} class="text-center">
-        <h2 className={styles.title} class="text-center text-white">Our Staff</h2>
+        <section id="staff" ref={staff} className={styles.section}>
+        <h2 className={styles.title && "text-center text-white"}>Our Staff</h2>
         <div className={styles.grid}>
           <div className={styles.card}>
-            <Image src="/images/roukee.png" width="150px" height="150px"/>
+            <Image src="/images/roukee.png" width="150px" height="150px" alt=""/>
             <h2>roukee</h2>
             <p>Owner</p>
             <p>Admin</p>
             <p>Team-Manager</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/xb0sse.png" width="150px" height="150px"/>
+            <Image src="/images/xb0sse.png" width="150px" height="150px" alt=""/>
             <h2>xB0sse</h2>
             <p>Co-Owner</p>
             <p>Lead Designer</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/missing.png" width="150px" height="150px"/>
+            <Image src="/images/missing.png" width="150px" height="150px" alt=""/>
             <h2>zNewEra</h2>
             <p>Coder</p>
             <p>Designer</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/furz.jpg" width="150px" height="150px"/>
+            <Image src="/images/furz.jpg" width="150px" height="150px" alt=""/>
             <h2>Furzgraanaatr</h2>
             <p>Co-Owner</p>
             <p>Server Admin</p>
@@ -105,39 +106,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="discord" ref={discord} className={styles.section} class="text-center">
-      <h2 className={styles.title} class="text-center text-white">Join our Discord!</h2>
-      <div class="text-center">
-      <iframe src="https://discordapp.com/widget?id=247374778179125251&theme=dark" width="300" height="500" allowtransparency="true" frameborder="0"></iframe>
-		 	<h3><a href="https://discord.gg/Gj4q6Sr" class="text-white">Join</a></h3>
+      <section id="discord" ref={discord} className={styles.section}>
+      <h2 className={styles.title && "text-center text-white"}>Join our Discord!</h2>
+      <div className="text-center">
+      <iframe src="https://discordapp.com/widget?id=247374778179125251&theme=dark" width="300" height="500" allowtransparency="true" frameBorder="0"></iframe>
+		 	<h3><a href="https://discord.gg/Gj4q6Sr" className="text-white">Join</a></h3>
        </div>
       </section>
 
-      <section id="league" ref={league} className={styles.section} class="text-center">
-        <h2 className={styles.title} class="text-center text-white">Our Main Team</h2>
+      <section id="league" ref={league} className={styles.section}>
+        <h2 className={styles.title && "text-center text-white"}>Our Main Team</h2>
         <div className={styles.grid}>
           <div className={styles.card}>
-            <Image src="/images/missing.png" width="150px" height="150px"/>
+            <Image src="/images/missing.png" width="150px" height="150px" alt=""/>
             <h2>Bopak</h2>
             <p>Top</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/missing.png" width="150px" height="150px"/>
+            <Image src="/images/missing.png" width="150px" height="150px" alt=""/>
             <h2>zNewEra</h2>
             <p>Jungle</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/missing.png" width="150px" height="150px"/>
+            <Image src="/images/missing.png" width="150px" height="150px" alt=""/>
             <h2>Atorim</h2>
             <p>Mid</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/missing.png" width="150px" height="150px"/>
+            <Image src="/images/missing.png" width="150px" height="150px" alt=""/>
             <h2>SecondTimePC</h2>
             <p>Bottom</p>
           </div>
           <div className={styles.card}>
-            <Image src="/images/missing.png" width="150px" height="150px"/>
+            <Image src="/images/missing.png" width="150px" height="150px" alt=""/>
             <h2>Deniz305</h2>
             <p>Support</p>
           </div>
@@ -145,8 +146,8 @@ export default function Home() {
       </section>
 
       <section id="faq" ref={faq} className={styles.section}>
-      <h2 className={styles.title} class="text-center text-white">FAQ</h2>
-      <div class="text-center">
+      <h2 className={styles.title && "text-center text-white"}>FAQ</h2>
+      <div className="text-center">
         <div className={styles.question}>
         <p>Q: What games do you play?</p>
         <p>A: We play League of Legends, Fortnite and Call of Duty</p>
